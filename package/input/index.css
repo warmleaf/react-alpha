@@ -1,0 +1,11 @@
+.container {
+    position: relative;
+}
+
+.input {
+    position: absolute;
+}
+
+.input:focus {
+    outline: none;
+}

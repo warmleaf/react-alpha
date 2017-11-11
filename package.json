@@ -1,0 +1,41 @@
+{
+    "name": "react-alpha",
+    "version": "0.1.0",
+    "main": "index.js",
+    "repository": "git@github.com:warmleaf/react-alpha.git",
+    "author": "orlo wang <ow.cc@outlook.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@storybook/addon-actions": "^3.2.15",
+        "@storybook/addon-console": "^1.0.0",
+        "@storybook/addon-info": "^3.2.15",
+        "@storybook/addon-knobs": "^3.2.15",
+        "@storybook/addon-links": "^3.2.15",
+        "@storybook/addon-options": "^3.2.15",
+        "@storybook/addons": "^3.2.15",
+        "@storybook/react": "^3.2.15",
+        "@types/node": "^8.0.50",
+        "@types/prop-types": "^15.5.2",
+        "@types/react": "^16.0.21",
+        "@types/react-dom": "^16.0.2",
+        "@types/storybook__react": "^3.0.5",
+        "awesome-typescript-loader": "^3.3.0",
+        "polished": "^1.9.0",
+        "prop-types": "^15.6.0",
+        "raw-loader": "^0.5.1",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-storybook-addon-chapters": "^2.1.0",
+        "react-storybook-addon-props-combinations": "^1.0.1",
+        "storybook-host": "^4.1.4",
+        "storybook-readme": "^3.1.1",
+        "typescript": "^2.6.1"
+    },
+    "dependencies": {
+        "styled-components": "^2.2.3"
+    },
+    "scripts": {
+        "start": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    }
+}

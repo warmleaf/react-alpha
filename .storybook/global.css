@@ -1,0 +1,11 @@
+html {
+    overflow: hidden;
+}
+
+a {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
