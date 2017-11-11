@@ -57,3 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# project file
+storybook-static
+
+# OS
+.DS_Store
+
