@@ -14,12 +14,15 @@
         "@storybook/addon-options": "^3.2.15",
         "@storybook/addons": "^3.2.15",
         "@storybook/react": "^3.2.15",
+        "@types/fs-extra": "^4.0.4",
         "@types/node": "^8.0.50",
         "@types/prop-types": "^15.5.2",
         "@types/react": "^16.0.21",
         "@types/react-dom": "^16.0.2",
         "@types/storybook__react": "^3.0.5",
         "awesome-typescript-loader": "^3.3.0",
+        "fs-extra": "^4.0.2",
+        "gh-pages": "^1.0.0",
         "polished": "^1.9.0",
         "prop-types": "^15.6.0",
         "raw-loader": "^0.5.1",
@@ -36,6 +39,8 @@
     },
     "scripts": {
         "start": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "post-ghpages": "node tools/build-gh-pages.js",
+        "prepost-ghpages": "build-storybook"
     }
 }
