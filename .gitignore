@@ -63,3 +63,5 @@ storybook-static
 # OS
 .DS_Store
 
+# no need ts for now
+*.no-need-ts-for-now
