@@ -2,8 +2,8 @@ import React from 'react'
 import { string, element, func, oneOfType } from 'prop-types'
 import Flex from '../../base.flex'
 
-const SimpleUserCard = ({ avatar, name, spec }) => (
-  <Flex>
+const SimpleUserCard = ({ avatar, name, spec, ...rest }) => (
+  <Flex {...rest}>
     {typeof avatar === 'string' ?
       <img src={avatar} /> : { avatar }
     }
