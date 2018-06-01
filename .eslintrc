@@ -1,0 +1,16 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true
+        },
+        "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "globals": {
+        "log": true
+    },
+    "rules": {}
+}
