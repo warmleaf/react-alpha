@@ -21,7 +21,7 @@ function addInfo(context, options, demo) {
   />;
 }
 
-export { APIDoc };
+export { APIDoc }
 
 export default {
   addAPIDoc(storyName, demo, options) {

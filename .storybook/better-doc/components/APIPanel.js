@@ -36,6 +36,10 @@ export default class APIPanel extends Component {
       const options = []
       const method = []
 
+      if (!props) {
+        return null
+      }
+
       for (let i = 0; i < props.length; i += 1) {
         const elm = props[i]
         if (elm.propType.name === 'func') {

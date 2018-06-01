@@ -25,7 +25,7 @@ export default class APIDoc extends Component {
 
   render() {
     const { code, scope, story, comment, platform } = this.props
-    console.log(this.props)
+
     return (<div style={styles.info}>
       <h2 style={styles.pointer}>
         {story}
