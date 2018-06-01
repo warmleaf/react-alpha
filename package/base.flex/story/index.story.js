@@ -7,7 +7,12 @@ storiesOf('Base Component|Base', module)
     'Flex',
     {
       comment: 'this is a description for Flex',
-      platform: 'pc|mobile'
-    },
-    () => <Flex onClick={() => {}}>Hello Button</Flex>
+      platform: 'pc|mobile',
+      scope: {
+        Flex
+      },
+      code: `
+        <Flex onClick={() => {}}>Hello Button</Flex>
+      `
+    }
   )

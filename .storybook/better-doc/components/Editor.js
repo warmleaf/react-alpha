@@ -30,12 +30,10 @@ export default class Demo extends Component {
   }
 
   render() {
-    const { children, demo, scope } = this.props
+    const { code, scope } = this.props
     return (<div>
       <h4 style={styles.pointer}>Demo</h4>
-      {children}
-      {console.log(demo)}
-      <LiveProvider code={demo} scope={scope}>
+      <LiveProvider code={code} scope={scope}>
         <LivePreview style={styles.preview}/>
         <LiveEditor />
         <LiveError />

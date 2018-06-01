@@ -7,7 +7,12 @@ storiesOf('Case Component|NodeTree', module)
     'NodeTree',
     {
       comment: 'this is a description for NodeTree',
-      platform: 'pc'
-    },
-    () => <NodeTree onClick={() => { }}>Hello Button</NodeTree>
+      platform: 'pc',
+      scope: {
+        NodeTree
+      },
+      code: `
+        <NodeTree onClick={() => { }}>Hello Button</NodeTree>
+      `
+    }
   )
