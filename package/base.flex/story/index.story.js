@@ -12,7 +12,7 @@ storiesOf('Base Component|Base', module)
         Flex
       },
       code: `
-        <Flex onClick={() => {}}>Hello Button</Flex>
+        <Flex b="1px solid green" bgc="rgba(0,0,0,.2)" p="20px" round="4px">I'm a flex box</Flex>
       `
     }
   )

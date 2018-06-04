@@ -26,6 +26,29 @@ export default class APIPanel extends Component {
     this.setState(state)
   }
 
+  _propTypeRender = propType => {
+    if (typeof propType === 'string') {
+      return <span style={styles.type}>{propType}</span>
+    }
+    switch (propType.name) {
+      case 'union':
+        return [
+          <span key="start">[</span>,
+          propType.value.map((type, i) => {
+            return [
+              <span key={type.name} style={styles.type}>{type.name}</span>,
+              (i < propType.value.length - 1) && ', '
+            ]
+          }),
+          <span key="end">]</span>
+        ]
+      case 'string':
+      case 'func':
+      default:
+        return <span style={styles.type}>{propType.name}</span>
+    }
+  }
+
   render() {
     if (
       typeof this.state.current !== 'undefined' &&
@@ -52,21 +75,23 @@ export default class APIPanel extends Component {
       return (
         <div style={styles.container}>
           {options.length > 0 && [
-            <h4 key="props">Props</h4>,
+            <h4 key="props" style={styles.title}>Props</h4>,
             options.map((item, i) => (
-              <div key={`item-${i}`}>
-                <span>{item.property}</span>
-                <span>{item.required}</span>
+              <div key={`item-${i}`} style={styles.item}>
+                <span style={styles.prop}>{item.property}</span>
+                <span style={styles.colon}>:</span>
+                {this._propTypeRender(item.propType)}
+                <span style={styles.sign}>{item.required && '!'}</span>
                 <span>{item.description}</span>
               </div>
             ))
           ]}
           {method.length > 0 && [
-            <h4 key="props">Method</h4>,
+            <h4 key="props" style={styles.title}>Method</h4>,
             method.map((item, i) => (
-              <div key={`item-${i}`}>
-                <span>{item.property}</span>
-                <span>{item.required}</span>
+              <div key={`item-${i}`} style={styles.item}>
+                <span style={styles.prop}>{item.property}</span>
+                <span style={styles.sign}>{item.required && '!'}</span>
                 <span>{item.description}</span>
               </div>
             ))
@@ -101,4 +126,24 @@ const styles = {
   pre: {
     flex: 1,
   },
+  title: {
+    marginTop: 0,
+    marginBottom: '10px'
+  },
+  type: {
+    color: '#45c9b0'
+  },
+  prop: {
+    color: '#569cd6'
+  },
+  item: {
+    color: '#555',
+    paddingBottom: '4px'
+  },
+  colon: {
+    marginRight: '4px'
+  },
+  sign: {
+    color: '#df4453'
+  }
 }

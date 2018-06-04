@@ -15,9 +15,13 @@ const SimpleUserCard = ({ avatar, name, spec, ...rest }) => (
 )
 
 SimpleUserCard.propTypes = {
-  avatar: oneOfType([string, element, func]),
-  name: string,
-  spec: string
+  avatar: oneOfType([string, element]).isRequired,
+  name: string.isRequired,
+  spec: string.isRequired
+}
+
+SimpleUserCard.defaultProps = {
+  name: ''
 }
 
 export default SimpleUserCard
