@@ -18,6 +18,9 @@ const styles = {
     backgroundClip: 'border-box',
     backgroundOrigin: 'padding-box'
   },
+  editor: {
+    overflow: 'scroll'
+  },
   pointer: {
     cursor: 'default'
   }
@@ -35,7 +38,7 @@ export default class Demo extends Component {
       <h4 style={styles.pointer}>Demo</h4>
       <LiveProvider code={code} scope={scope}>
         <LivePreview style={styles.preview}/>
-        <LiveEditor />
+        <LiveEditor  style={styles.editor}/>
         <LiveError />
       </LiveProvider>
     </div>)
