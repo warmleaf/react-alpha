@@ -82,6 +82,9 @@ export default class APIPanel extends Component {
                 <span style={styles.colon}>:</span>
                 {this._propTypeRender(item.propType)}
                 <span style={styles.sign}>{item.required && '!'}</span>
+                {item.defaultValue && <span style={{ paddingLeft: '4px' }}>
+                (default: <span style={{ fontWeight: 500 }}>{item.defaultValue}</span>)
+                </span>}
                 <span>{item.description}</span>
               </div>
             ))
@@ -92,6 +95,7 @@ export default class APIPanel extends Component {
               <div key={`item-${i}`} style={styles.item}>
                 <span style={styles.prop}>{item.property}</span>
                 <span style={styles.sign}>{item.required && '!'}</span>
+                {item.defaultValue && <span style={{ paddingLeft: '4px' }}>(default: {item.defaultValue})</span>}
                 <span>{item.description}</span>
               </div>
             ))
