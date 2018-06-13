@@ -32,16 +32,10 @@ export default class APIPanel extends Component {
     }
     switch (propType.name) {
       case 'union':
-        return [
-          <span key="start">[</span>,
-          propType.value.map((type, i) => {
-            return [
-              <span key={type.name} style={styles.type}>{type.name}</span>,
-              (i < propType.value.length - 1) && ', '
-            ]
-          }),
-          <span key="end">]</span>
-        ]
+        return propType.value.map((type, i) => [
+          <span key={type.name} style={styles.type}>{type.name}</span>,
+          (i < propType.value.length - 1) && ' | '
+        ])
       case 'string':
       case 'func':
       default:
@@ -83,7 +77,7 @@ export default class APIPanel extends Component {
                 {this._propTypeRender(item.propType)}
                 <span style={styles.sign}>{item.required && '!'}</span>
                 {item.defaultValue && <span style={{ paddingLeft: '4px' }}>
-                (default: <span style={{ fontWeight: 500 }}>{item.defaultValue}</span>)
+                  (default: <span style={{ fontWeight: 500 }}>{item.defaultValue}</span>)
                 </span>}
                 <span>{item.description}</span>
               </div>

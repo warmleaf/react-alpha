@@ -10,6 +10,9 @@
     "@storybook/addon-options": "^3.2.15",
     "@storybook/addons": "^4.0.0-alpha.8",
     "@storybook/react": "^4.0.0-alpha.8",
+    "@types/codemirror": "^0.0.57",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
     "babel-core": "^6.26.3",
     "babel-plugin-react-docgen": "^1.9.0",
     "babel-runtime": "^6.26.0",
@@ -22,7 +25,12 @@
     "react-live": "^1.10.1"
   },
   "dependencies": {
+    "codemirror": "^5.38.0",
+    "dom-css": "^2.1.0",
+    "monaco-editor": "^0.13.1",
     "polished": "^1.9.2",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-resize-detector": "^2.3.0",
     "styled-components": "^3.3.0"
   },
   "scripts": {

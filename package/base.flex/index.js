@@ -47,7 +47,7 @@ const Flex = styled.div`
   padding-top: ${props => props.pt || null};
   position: ${props => (props.absolute ? 'absolute' : props.relative ? 'relative' : null)};
   opacity: ${props => props.o || null};
-  overflow: ${props => (props.nonOverflow ? 'hidden' : props.auto ? 'auto' : null)};
+  overflow: ${props => (props.nonOverflow ? 'hidden' : props.scroll ? 'scroll' : 'auto')};
   right: ${props => props.rt || null};
   top: ${props => props.tp || null};
   text-align: ${props => props.tps || null};
@@ -55,6 +55,7 @@ const Flex = styled.div`
   transition: ${props => props.ani || null};
   width: ${props => props.w || null};
   z-index: ${props => props.z || null};
+  -webkit-overflow-scrolling: ${props => props.rebound || null};
 `
 
 Flex.propTypes = {
