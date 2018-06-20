@@ -1,5 +1,6 @@
 import React, { Component, createRef } from 'react'
 import { string, element, bool, object } from 'prop-types'
+import ReactResize from 'react-resize-detector'
 import styled from 'styled-components'
 import css from 'dom-css'
 import Flex from '../base.flex'
@@ -13,14 +14,21 @@ export default class Scroll extends Component {
     this.vertical = createRef()
     this.scrollbarWidth = getScrollbarWidth()
     this.state = {
-      isMount: false
+      view: {
+        height: null,
+        width: null,
+        contentHeight: null,
+        contentWidth: null,
+        xSize: null,
+        ySize: null
+      }
     }
   }
   componentDidMount() {
     const { defaultX, defaultY } = this.props
     this.setState({ isMount: true })
     this._getViewInfo()
-    this._updateOnFrame(view => console.log(view))
+    this._updateOnFrame()
     this._addListeners()
   }
   componentDidUpdate() {
@@ -28,46 +36,33 @@ export default class Scroll extends Component {
   }
 
   _addListeners = () => {
-    console.log(this.view)
-    if (typeof document === 'undefined' || !this.view) return
+    if (typeof document === 'undefined' || !this.state.view) return
     console.log(this.dom.current)
     this.dom.current.addEventListener('scroll', this._scrollHandler)
-    // todo 是否监听resize事件？
-  }
-
-  _scrollStart = () => {
-
-  }
-
-  _scrollEnd = () => {
-
   }
 
   _getViewInfo = () => {
-    const { scrollTop, scrollHeight, clientHeight, clientWidth } = this.dom.current
-    this.view = {
-      width: this.dom.current.clientWidth,
-      height: this.dom.current.clientHeight,
-      contentWidth: this.dom.current.scrollWidth,
-      contentHeight: this.dom.current.scrollHeight,
-      ySize: Math.pow(this.dom.current.clientHeight, 2) / this.dom.current.scrollHeight - this.scrollbarWidth,
-      xSize: Math.pow(this.dom.current.clientWidth, 2) / this.dom.current.scrollWidth
-    }
+    const { scrollHeight, clientHeight, clientWidth, scrollWidth } = this.dom.current
+    this.setState({
+      view: {
+        width: clientWidth,
+        height: clientHeight,
+        contentWidth: scrollWidth,
+        contentHeight: scrollHeight,
+        ySize: clientHeight === scrollHeight ? 0 : Math.pow(clientHeight, 2) / scrollHeight,
+        xSize: clientWidth === scrollWidth ? 0 : Math.pow(clientWidth, 2) / scrollWidth
+      }
+    })
+    console.log(this.dom.current.offsetHeight)
   }
 
   update = cb => {
-    const { scrollTop, scrollHeight, clientHeight, clientWidth } = this.dom.current
-    this.view = {
-      width: this.dom.current.clientWidth,
-      height: this.dom.current.clientHeight,
-      contentWidth: this.dom.current.scrollWidth,
-      contentHeight: this.dom.current.scrollHeight,
-      ySize: Math.pow(this.dom.current.clientHeight, 2) / this.dom.current.scrollHeight,
-      xSize: Math.pow(this.dom.current.clientWidth, 2) / this.dom.current.scrollWidth
-    }
+    const { scrollTop, scrollLeft } = this.dom.current
+    const { width, height, contentHeight, contentWidth } = this.state.view
     if (typeof cb !== 'function') return
-    const st = clientHeight * scrollTop / scrollHeight
-    cb(st, this.dom.current.scrollLeft)
+    const st = height * scrollTop / contentHeight
+    const sl = width * scrollLeft / contentWidth
+    cb(st, sl)
   }
 
   // from https://github.com/malte-wessel/react-custom-scrollbars
@@ -79,34 +74,18 @@ export default class Scroll extends Component {
     })
   }
 
-  _detectScrolling() {
-    if (this.scrolling) return
-    this.scrolling = true
-    // this.handleScrollStart()
-    this.detectScrollingInterval = setInterval(() => {
-      if (this.lastViewScrollLeft === this.viewScrollLeft
-        && this.lastViewScrollTop === this.viewScrollTop) {
-        clearInterval(this.detectScrollingInterval)
-        this.scrolling = false
-        console.log('stop')
-      }
-      this.lastViewScrollLeft = this.viewScrollLeft
-      this.lastViewScrollTop = this.viewScrollTop
-    }, 100)
-  }
-
   _updateOnFrame = (cb) => {
     this._raf((() => this.update(cb)))
   }
 
   _scrollHandler = () => {
     const { onScroll, onScrollStart, onScrollEnd } = this.props
+    const { xSize, ySize } = this.state.view
     this._updateOnFrame((scrollTop, scrollLeft) => {
       this.scrollTop = scrollTop
       this.scrollLeft = scrollLeft
-      console.log('update')
-      css(this.vertical.current, { top: `${this.scrollTop}px` })
-      css(this.horizontal.current, { left: `${this.scrollLeft}px` })
+      if (ySize && this.scrollbarWidth > 0) css(this.vertical.current, { top: `${this.scrollTop}px` })
+      if (xSize && this.scrollbarWidth > 0) css(this.horizontal.current, { left: `${this.scrollLeft}px` })
       if (onScroll) onScroll(scrollTop, scrollLeft)
     })
     if (this.scrolling) return
@@ -124,16 +103,6 @@ export default class Scroll extends Component {
     }, 100)
   }
 
-  _getYThumbPos = () => {
-    const { height, contentHeight } = this.view
-    return height / contentHeight * this.scrollTop
-  }
-
-  _getXThumbPos = () => {
-    const { width, contentWidth } = this.view
-    return width / contentWidth * this.scrollTop
-  }
-
   render() {
     const {
       children,
@@ -147,7 +116,7 @@ export default class Scroll extends Component {
       vertical,
       ...rest
     } = this.props
-    console.log('->', this.view)
+    console.log('->', this.state.view)
     return (
       <Flex
         nonOverflow
@@ -158,69 +127,44 @@ export default class Scroll extends Component {
       >
         <Flex
           innerRef={this.dom}
-          mr={`-${this.scrollbarWidth}px`}
-          mb={`-${this.scrollbarWidth}px`}
+          mr={this.state.view.ySize && `-${this.scrollbarWidth}px`}
+          mb={this.state.view.xSize && `-${this.scrollbarWidth}px`}
         >
           {children}
         </Flex>
-        {this.state.isMount && horizontal && this.scrollbarWidth > 0 && (
-          <Flex absolute lt='0' bm='0' w='100%' h={`${this.scrollbarWidth}px`}>
-            <Flex
-              innerRef={this.horizontal}
-              absolute
-              round="20px"
-              bgc="rgba(0,0,0,.5)"
-              w={`${this.view.xSize}px`}
-              h="100%"
-              lt={this.scrollLeft}
-            />
-          </Flex>
-        )}
-        {this.state.isMount && vertical && this.scrollbarWidth > 0 && (
-          <Flex absolute tp='0' rt='0' h='100%' w={`${this.scrollbarWidth}px`}>
-            <Flex
-              innerRef={this.vertical}
-              absolute
-              round="20px"
-              bgc="rgba(0,0,0,.5)"
-              w="100%"
-              h={`${this.view.ySize}px`}
-              tp={this.scrollTop}
-            />
-          </Flex>
-        )}
-      </Flex>
-    )
-  }
-
-  _move = () => {
-    // const to = this.dom.current.scrollTop
-    // console.log(to)
-    // const info = this._getThumbInfo()
-    // this.setState({ y: (to - info.size) * info.scale + 'px' })
-  }
-
-  _renderScrollbar = direction => {
-    const isX = direction === 'x'
-    return (
-      <Flex
-        absolute
-        lt={isX && '0'}
-        bm={isX && '0'}
-        tp={!isX && '0'}
-        rt={!isX && '0'}
-        w={isX ? '100%' : `${this.scrollbarWidth}px`}
-        h={isX ? `${this.scrollbarWidth}px` : '100%'}
-      >
-        <Flex
-          absolute
-          round="20px"
-          bgc="rgba(0,0,0,.5)"
-          w={isX ? `${this._getXThumbPos()}px` : '100%'}
-          h={!isX ? `${this._getYThumbPos()}px` : '100%'}
-          tp={!isX && this.scrollTop}
-          lt={isX && this.scrollLeft}
-        />
+        {this.state.isMount &&
+          horizontal &&
+          this.scrollbarWidth > 0 &&
+          this.state.view.xSize !== 0 && (
+            <Flex absolute lt='0' bm='0' w='100%' h={`${this.scrollbarWidth}px`}>
+              <Flex
+                innerRef={this.horizontal}
+                absolute
+                round="20px"
+                bgc="rgba(0,0,0,.5)"
+                w={`${this.state.view.xSize}px`}
+                h="100%"
+                lt={this.scrollLeft}
+              />
+            </Flex>
+          )}
+        {this.state.isMount &&
+          vertical &&
+          this.scrollbarWidth > 0 &&
+          this.state.view.ySize !== 0 && (
+            <Flex absolute tp='0' rt='0' h='100%' w={`${this.scrollbarWidth}px`}>
+              <Flex
+                innerRef={this.vertical}
+                absolute
+                round="20px"
+                bgc="rgba(0,0,0,.5)"
+                w="100%"
+                h={`${this.state.view.ySize}px`}
+                tp={this.scrollTop}
+              />
+            </Flex>
+          )}
+          <ReactResize handleHeight handleWidth onResize={this._getViewInfo}/>
       </Flex>
     )
   }

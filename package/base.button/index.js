@@ -3,6 +3,7 @@ import { string } from 'prop-types'
 import styled from 'styled-components'
 import { lighten, darken } from 'polished'
 import Flex from '../base.flex'
+import Text from '../base.text'
 
 const AUXILIARY = '#ebebeb'
 const PRIMARY = '#6991FF'
@@ -15,7 +16,7 @@ export default class Button extends PureComponent {
       textWithLine,
       theme,
       prompt,
-      onClick,
+      // onClick,
       href,
       route,
       primary,
@@ -43,7 +44,7 @@ export default class Button extends PureComponent {
         cur="pointer"
         {...rest}
       >
-        {children ? children : <span>{label}</span>}
+        {children ? children : <Text break>{label}</Text>}
       </Flex>
     )
   }

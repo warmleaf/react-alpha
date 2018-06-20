@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react'
 import MonacoEditor from '../index'
 
-storiesOf('Case Component|Editor', module)
+storiesOf('Case Component|Editor/MonacoEditor', module)
   .addAPIDoc(
-    'MonacoEditor',
+    'basic use',
     {
       comment: 'this is a description for MonacoEditor',
-      platform: 'pc|mobile',
+      platform: 'pc',
       scope: {
         MonacoEditor //story必须放置第一位
       },

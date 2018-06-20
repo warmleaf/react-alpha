@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react'
-import { injectGlobal } from 'styled-components'
 import { bool, string, object, oneOfType, func, number, arrayOf } from 'prop-types'
 import Flex from '../../base.flex'
 
@@ -19,11 +18,10 @@ export default class SimpleEditor extends Component {
     this._updateAddons()
   }
 
-  _updateAddons = async() => {
+  _updateAddons = async () => {
     const {
       activeLine,
       foldGutter,
-      lineNumbers,
       matchHighlight,
       matchHighlightRules,
       mode,
@@ -35,16 +33,20 @@ export default class SimpleEditor extends Component {
       trailingSpace,
       useNativeScroll,
       // ! 检查拼写
-      useNativeScrollFuse
+      useNativeScrollForce
     } = this.props
     const libs = []
-    if (showHint) libs.push(import('codemirror/addon/hint/show-hint'), import('./hint-style'))
+    if (showHint) libs.push(
+      import('codemirror/addon/hint/show-hint'),
+      import('./hint-style')
+    )
+    // todo 添加不同mode
     if (mode) {
       libs.push(import('codemirror/mode/sql/sql'))
       if (showHint) libs.push(import('codemirror/addon/hint/sql-hint'))
     }
 
-    const needScrollbar = !useNativeScrollFuse && !/Mac/.test(navigator.platform) && !useNativeScroll
+    const needScrollbar = !useNativeScrollForce && !/Mac/.test(navigator.platform) && !useNativeScroll
     if (needScrollbar) {
       libs.push(
         import('codemirror/addon/scroll/simplescrollbars'),
@@ -77,7 +79,8 @@ export default class SimpleEditor extends Component {
       })
 
       this.cmInstance.on('keydown', (cm, e) => {
-        if (showHint) cm.showHint()
+        // todo 添加不同mode
+        if (showHint) cm.showHint({ completeSingle: false })
       })
 
       this.cmInstance.on('beforeSelectionChange', (cm, info) => {

@@ -12,7 +12,40 @@ storiesOf('Case Component|NodeTree', module)
         NodeTree
       },
       code: `
-        <NodeTree onClick={() => { }}>Hello Button</NodeTree>
+class Example extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      query: ''
+    }
+  }
+
+  render() {
+    return <div>
+      <input type='text' onChange={e => this.setState({ query: e.target.value })}/>
+      <NodeTree
+        search={this.state.query}
+        data={[
+          {
+            title: 'title1',
+            children: [{
+              title: 'title2'
+            }, {
+              title: 'title3'
+            }]
+          },{
+            title: 'title4',
+            children: [{
+              title: 'title5'
+            }, {
+              title: 'title6'
+            }]
+          }
+        ]}
+      />
+    </div>
+  }
+}
       `
     }
   )

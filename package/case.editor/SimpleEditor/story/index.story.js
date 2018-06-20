@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/react'
 import SimpleEditor from '../index'
 
-storiesOf('Case Component|Editor', module)
+storiesOf('Case Component|Editor/CodemirrorEditor', module)
   .addAPIDoc(
-    'SimpleEditor',
+    'basic use',
     {
-      comment: 'this is a description for SimpleEditor',
+      comment: 'this is a description for CodemirrorEditor',
       platform: 'pc|mobile',
       scope: {
         SimpleEditor //story必须放置第一位
