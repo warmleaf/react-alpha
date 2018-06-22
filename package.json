@@ -30,6 +30,7 @@
     "dom-css": "^2.1.0",
     "monaco-editor": "^0.13.1",
     "polished": "^1.9.2",
+    "react-contextmenu-wl": "^3.0.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-resize-detector": "^2.3.0",
     "react-sortable-tree": "^2.2.0",

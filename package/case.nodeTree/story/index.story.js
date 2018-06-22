@@ -61,7 +61,6 @@ class Example extends React.Component {
       />
       <ContextMenu id="table">
         {(state) => {
-          console.log(state)
           return [
             <MenuItem key="1">item 01</MenuItem>,
             (state.node.title !== 'title12' ? <MenuItem key="2">item 02</MenuItem> : null)
