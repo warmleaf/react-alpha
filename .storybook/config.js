@@ -1,6 +1,6 @@
 import { configure, setAddon } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
-import addWithAPIDoc from './better-doc'
+import addWithAPIDoc from 'storybook-addon-better-api'
 
 setOptions({
   /**
@@ -81,7 +81,7 @@ setOptions({
 
 setAddon(addWithAPIDoc)
 
-const req = require.context('../package', true, /.story.js$/)
+const req = require.context('../packages', true, /.story.js$/)
 function loadStories() {
   require('../stories/introduce.story')
   req.keys().forEach(filename => req(filename))
