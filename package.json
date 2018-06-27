@@ -1,6 +1,6 @@
 {
   "name": "react-alpha",
-  "version": "0.2.2",
+  "version": "0.2.8",
   "main": "index.js",
   "repository": "git@github.com:warmleaf/react-alpha.git",
   "author": "orlo wang <ow.cc@outlook.com>",
@@ -16,9 +16,6 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "storybook-addon-better-api": "^1.1.5"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "scripts": {
     "start": "start-storybook -p 6006",
