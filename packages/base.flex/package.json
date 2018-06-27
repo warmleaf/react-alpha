@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.flex",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
