@@ -1,4 +1,4 @@
-import { string } from 'prop-types'
+// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Flex = styled.div`
@@ -58,29 +58,29 @@ const Flex = styled.div`
   -webkit-overflow-scrolling: ${props => props.rebound || null};
 `
 
-Flex.propTypes = {
-  /* align-self */
-  as: string,
-  b: string,
-  /* border-bottom */
-  bb: string,
-  /* border-left */
-  bl: string,
-  /* border-radius */
-  br: string,
-  /* background */
-  bg: string,
-  /* background-color */
-  bgc: string,
-  /* border-top */
-  bt: string,
-  /* inline flex */
-  inline: string,
-  /* vertical center(default) */
-  vc: string,
-  /* horizontal center(default) */
-  hc: string,
-  round: string
-}
+// Flex.propTypes = {
+//   /* align-self */
+//   as: PropTypes.string,
+//   b: PropTypes.string,
+//   /* border-bottom */
+//   bb: PropTypes.string,
+//   /* border-left */
+//   bl: PropTypes.string,
+//   /* border-radius */
+//   br: PropTypes.string,
+//   /* background */
+//   bg: PropTypes.string,
+//   /* background-color */
+//   bgc: PropTypes.string,
+//   /* border-top */
+//   bt: PropTypes.string,
+//   /* inline flex */
+//   inline: PropTypes.string,
+//   /* vertical center(default) */
+//   vc: PropTypes.string,
+//   /* horizontal center(default) */
+//   hc: PropTypes.string,
+//   round: PropTypes.string
+// }
 
 export default Flex
