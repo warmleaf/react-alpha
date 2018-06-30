@@ -1,0 +1,10 @@
+.ra-base-avatar-card  .ra-base-avatar {
+  margin-right: 10px;
+}
+.ra-base-avatar-card .ra-basic-ac-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+.ra-base-avatar-card .ra-basic-ac-subname {
+  font-size: 12px;
+}
