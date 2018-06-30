@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.avatar-card",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "text",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
