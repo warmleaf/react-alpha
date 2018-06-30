@@ -1,5 +1,5 @@
 {
-  "name": "@react-alpha/base.AvatarCard",
+  "name": "@react-alpha/base.avatar-card",
   "version": "0.2.9",
   "description": "text",
   "main": "lib/cjs/index.js",
