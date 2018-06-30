@@ -9,12 +9,17 @@ const Flex = styled.div`
   align-self: ${props => props.as || null};
   background: ${props => props.bg || null};
   background-color: ${props => props.bgc || null};
+  background-image: ${props => props.bgi ? 'url(' + props.bgi +')' : null};
+  background-size: ${props => props.bgi ? (props.bgs || '100%') : (props.bgs || null)};
   border: ${props => props.b || null};
   border-bottom: ${props => props.bb || null};
+  border-color: ${props => props.bc || null};
   border-left: ${props => props.bl || null};
   border-radius: ${props => props.round || null};
   border-right: ${props => props.br || null};
+  border-style: ${props => props.bs || null};
   border-top: ${props => props.bt || null};
+  border-width: ${props => props.bw || null};
   bottom: ${props => props.bm || null};
   box-shadow: ${props => props.shadow || null};
   box-sizing: border-box;

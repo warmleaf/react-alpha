@@ -1,8 +1,8 @@
-/* @react-alpha/base.flex version 0.2.6
+/* @react-alpha/base.flex version 0.2.8
  *
- * Copyright (c) 2013-present, 
+ * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
- * This source code is licensed under the ISC license found in the
+ * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 import PropTypes from "prop-types";
@@ -14,12 +14,17 @@ const Flex = styled.div`
   align-self: ${l => l.as || null};
   background: ${l => l.bg || null};
   background-color: ${l => l.bgc || null};
+  background-image: ${l => l.bgi ? "url(" + l.bgi + ")" : null};
+  background-size: ${l => l.bgi ? l.bgs || "100%" : l.bgs || null};
   border: ${l => l.b || null};
   border-bottom: ${l => l.bb || null};
+  border-color: ${l => l.bc || null};
   border-left: ${l => l.bl || null};
   border-radius: ${l => l.round || null};
   border-right: ${l => l.br || null};
+  border-style: ${l => l.bs || null};
   border-top: ${l => l.bt || null};
+  border-width: ${l => l.bw || null};
   bottom: ${l => l.bm || null};
   box-shadow: ${l => l.shadow || null};
   box-sizing: border-box;
