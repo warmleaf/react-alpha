@@ -34,6 +34,7 @@ const Avatar = ({ src, status, size, statusBgColor, ...rest }) => (
   >
     <Flex
       full
+      noRepeatBg
       round="50%"
       bgi={src}
     />

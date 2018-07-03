@@ -10,6 +10,7 @@ const Flex = styled.div`
   background: ${props => props.bg || null};
   background-color: ${props => props.bgc || null};
   background-image: ${props => props.bgi ? 'url(' + props.bgi +')' : null};
+  background-repeat: ${props => props.noRepeatBg ? 'no-repeat' : null};
   background-size: ${props => props.bgi ? (props.bgs || '100%') : (props.bgs || null)};
   border: ${props => props.b || null};
   border-bottom: ${props => props.bb || null};

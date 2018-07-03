@@ -14,6 +14,7 @@ function pickBreakType(type) {
 }
 
 const Text = styled.span`
+  align-self: ${props => props.as || null};
   background: ${props => props.bg || null};
   background-color: ${props => props.bgc || null};
   border: ${props => props.b || null};
