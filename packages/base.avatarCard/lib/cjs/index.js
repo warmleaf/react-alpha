@@ -1,4 +1,4 @@
-/* @react-alpha/base.AvatarCard version 0.2.8
+/* @react-alpha/base.avatar-card version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var PropTypes = require("prop-types"), PropTypes__default = _interopDefault(PropTypes), styled = require("styled-components"), styled__default = _interopDefault(styled), React = require("react"), React__default = _interopDefault(React);
 
-/* @react-alpha/base.flex version 0.2.8
+/* @react-alpha/base.flex version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -30,6 +30,7 @@ const Flex = styled__default.div`
   background: ${n => n.bg || null};
   background-color: ${n => n.bgc || null};
   background-image: ${n => n.bgi ? "url(" + n.bgi + ")" : null};
+  background-repeat: ${n => n.noRepeatBg ? "no-repeat" : null};
   background-size: ${n => n.bgi ? n.bgs || "100%" : n.bgs || null};
   border: ${n => n.b || null};
   border-bottom: ${n => n.bb || null};
@@ -80,11 +81,11 @@ const Flex = styled__default.div`
   -webkit-overflow-scrolling: ${n => n.rebound || null};
 `;
 
-/* @react-alpha/base.text version 0.2.6
+/* @react-alpha/base.text version 0.2.9
  *
- * Copyright (c) 2013-present, 
+ * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
- * This source code is licensed under the ISC license found in the
+ * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 function pickBreakType(n) {
@@ -127,6 +128,7 @@ Flex.propTypes = {
 };
 
 const Text = styled__default.span`
+  align-self: ${n => n.as || null};
   background: ${n => n.bg || null};
   background-color: ${n => n.bgc || null};
   border: ${n => n.b || null};
@@ -198,7 +200,7 @@ var _extends = Object.assign || function(n) {
             value: Object.freeze(t)
         }
     }));
-}, _templateObject2 = taggedTemplateLiteral([ "\n  align-items: ", ";\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  background-image: ", ";\n  background-size: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-color: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-style: ", ";\n  border-top: ", ";\n  border-width: ", ";\n  bottom: ", ";\n  box-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  display: ", ";\n  height: ", ";\n  justify-content: ", ";\n  left: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  max-height: ", ";\n  max-width: ", ";\n  min-height: ", ";\n  min-width: ", ";\n  flex: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  position: ", ";\n  opacity: ", ";\n  overflow: ", ";\n  right: ", ";\n  top: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  z-index: ", ";\n  -webkit-overflow-scrolling: ", ";\n" ], [ "\n  align-items: ", ";\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  background-image: ", ";\n  background-size: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-color: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-style: ", ";\n  border-top: ", ";\n  border-width: ", ";\n  bottom: ", ";\n  box-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  display: ", ";\n  height: ", ";\n  justify-content: ", ";\n  left: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  max-height: ", ";\n  max-width: ", ";\n  min-height: ", ";\n  min-width: ", ";\n  flex: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  position: ", ";\n  opacity: ", ";\n  overflow: ", ";\n  right: ", ";\n  top: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  z-index: ", ";\n  -webkit-overflow-scrolling: ", ";\n" ]), Flex$1 = styled__default.div(_templateObject2, function(n) {
+}, _templateObject2 = taggedTemplateLiteral([ "\n  align-items: ", ";\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  background-image: ", ";\n  background-repeat: ", ";\n  background-size: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-color: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-style: ", ";\n  border-top: ", ";\n  border-width: ", ";\n  bottom: ", ";\n  box-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  display: ", ";\n  height: ", ";\n  justify-content: ", ";\n  left: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  max-height: ", ";\n  max-width: ", ";\n  min-height: ", ";\n  min-width: ", ";\n  flex: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  position: ", ";\n  opacity: ", ";\n  overflow: ", ";\n  right: ", ";\n  top: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  z-index: ", ";\n  -webkit-overflow-scrolling: ", ";\n" ], [ "\n  align-items: ", ";\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  background-image: ", ";\n  background-repeat: ", ";\n  background-size: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-color: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-style: ", ";\n  border-top: ", ";\n  border-width: ", ";\n  bottom: ", ";\n  box-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  display: ", ";\n  height: ", ";\n  justify-content: ", ";\n  left: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  max-height: ", ";\n  max-width: ", ";\n  min-height: ", ";\n  min-width: ", ";\n  flex: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  position: ", ";\n  opacity: ", ";\n  overflow: ", ";\n  right: ", ";\n  top: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  z-index: ", ";\n  -webkit-overflow-scrolling: ", ";\n" ]), Flex$1 = styled__default.div(_templateObject2, function(n) {
     return n.column ? n.vc ? !0 === n.vc ? "center" : n.vc : null : n.hc ? !0 === n.hc ? "center" : n.hc : null;
 }, function(n) {
     return n.as || null;
@@ -208,6 +210,8 @@ var _extends = Object.assign || function(n) {
     return n.bgc || null;
 }, function(n) {
     return n.bgi ? "url(" + n.bgi + ")" : null;
+}, function(n) {
+    return n.noRepeatBg ? "no-repeat" : null;
 }, function(n) {
     return n.bgi ? n.bgs || "100%" : n.bgs || null;
 }, function(n) {
@@ -375,6 +379,7 @@ var Avatar = function(n) {
         h: e
     }, o), React__default.createElement(Flex$1, {
         full: !0,
+        noRepeatBg: !0,
         round: "50%",
         bgi: t
     }), React__default.createElement(Flex$1, {

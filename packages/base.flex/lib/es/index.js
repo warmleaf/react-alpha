@@ -1,4 +1,4 @@
-/* @react-alpha/base.flex version 0.2.8
+/* @react-alpha/base.flex version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -15,6 +15,7 @@ const Flex = styled.div`
   background: ${l => l.bg || null};
   background-color: ${l => l.bgc || null};
   background-image: ${l => l.bgi ? "url(" + l.bgi + ")" : null};
+  background-repeat: ${l => l.noRepeatBg ? "no-repeat" : null};
   background-size: ${l => l.bgi ? l.bgs || "100%" : l.bgs || null};
   border: ${l => l.b || null};
   border-bottom: ${l => l.bb || null};

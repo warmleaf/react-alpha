@@ -1,8 +1,8 @@
-/* @react-alpha/base.text version 0.2.6
+/* @react-alpha/base.text version 0.2.9
  *
- * Copyright (c) 2013-present, 
+ * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
- * This source code is licensed under the ISC license found in the
+ * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 "use strict";
@@ -32,6 +32,7 @@ function pickBreakType(r) {
 }
 
 const Text = styled.span`
+  align-self: ${r => r.as || null};
   background: ${r => r.bg || null};
   background-color: ${r => r.bgc || null};
   border: ${r => r.b || null};
