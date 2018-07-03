@@ -1,4 +1,4 @@
-/* @react-alpha/base.avatar version 0.2.10
+/* @react-alpha/base.avatar version 0.2.11
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var PropTypes = require("prop-types"), PropTypes__default = _interopDefault(PropTypes), styled = require("styled-components"), styled__default = _interopDefault(styled), React = require("react"), React__default = _interopDefault(React);
 
-/* @react-alpha/base.flex version 0.2.10
+/* @react-alpha/base.flex version 0.2.11
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -147,6 +147,7 @@ var Avatar = function(e) {
     var l = e.src, t = e.status, r = e.size, n = e.statusBgColor, a = objectWithoutProperties(e, [ "src", "status", "size", "statusBgColor" ]);
     return React__default.createElement(Flex, _extends({
         relative: !0,
+        nonOverflow: !0,
         className: "ra-base-avatar",
         w: r,
         h: r
@@ -157,18 +158,20 @@ var Avatar = function(e) {
         bgi: l
     }), React__default.createElement(Flex, {
         absolute: !0,
-        rt: .0214466094 * parseInt(r) + "px",
-        bm: .0214466094 * parseInt(r) + "px",
+        rt: -.0732233047 * parseInt(r) + "px",
+        bm: -.0732233047 * parseInt(r) + "px",
         bc: n || "#fff",
-        bw: .0425 * parseInt(r) + "px",
+        bw: .0732233047 * parseInt(r) + "px",
         bs: "solid",
         round: "50%",
-        w: .2928932188 * parseInt(r) + "px",
-        h: .2928932188 * parseInt(r) + "px",
+        w: .4393398282 * parseInt(r) + "px",
+        h: .4393398282 * parseInt(r) + "px",
         bgc: pickColor(t)
     }));
 };
 
+// 2928932188
+// 0214466094
 Avatar.propTypes = {
     /* align-self */
     size: PropTypes.string

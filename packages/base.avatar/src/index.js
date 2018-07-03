@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
 import { injectGlobal } from 'styled-components'
-import Flex from '../../base.flex'
+import Flex from '@react-alpha/base.flex'
 
 injectGlobal`
   .ra-base-flex > img {

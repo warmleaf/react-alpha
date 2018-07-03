@@ -18,10 +18,11 @@ const banner = `
 const globals = {
   react: 'React',
   'prop-types': 'string',
-  'styled-components': ''
+  'styled-components': '',
+  '@react-alpha/base.flex': 'Flex',
 }
 
-const external = ['react', 'prop-types', 'styled-components']
+const external = ['react', 'prop-types', 'styled-components', '@react-alpha/base.flex']
 
 export default [
   {

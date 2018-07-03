@@ -1,4 +1,4 @@
-/* @react-alpha/base.avatar version 0.2.10
+/* @react-alpha/base.avatar version 0.2.11
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -140,6 +140,7 @@ var Avatar = function(l) {
     var e = l.src, n = l.status, r = l.size, t = l.statusBgColor, o = objectWithoutProperties(l, [ "src", "status", "size", "statusBgColor" ]);
     return React.createElement(Flex, _extends({
         relative: !0,
+        nonOverflow: !0,
         className: "ra-base-avatar",
         w: r,
         h: r
@@ -150,18 +151,20 @@ var Avatar = function(l) {
         bgi: e
     }), React.createElement(Flex, {
         absolute: !0,
-        rt: .0214466094 * parseInt(r) + "px",
-        bm: .0214466094 * parseInt(r) + "px",
+        rt: -.0732233047 * parseInt(r) + "px",
+        bm: -.0732233047 * parseInt(r) + "px",
         bc: t || "#fff",
-        bw: .0425 * parseInt(r) + "px",
+        bw: .0732233047 * parseInt(r) + "px",
         bs: "solid",
         round: "50%",
-        w: .2928932188 * parseInt(r) + "px",
-        h: .2928932188 * parseInt(r) + "px",
+        w: .4393398282 * parseInt(r) + "px",
+        h: .4393398282 * parseInt(r) + "px",
         bgc: pickColor(n)
     }));
 };
 
+// 2928932188
+// 0214466094
 Avatar.propTypes = {
     /* align-self */
     size: string

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
 import { injectGlobal } from 'styled-components'
-import Flex from '../../base.flex'
-import Text from '../../base.text'
-import Avatar from '../../base.avatar'
+import Flex from '@react-alpha/base.flex'
+import Text from '@react-alpha/base.text'
+import Avatar from '@react-alpha/base.avatar'
 
 const AvatarCard = ({
   avatarSrc,
