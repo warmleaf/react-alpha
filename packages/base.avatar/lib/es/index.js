@@ -1,4 +1,4 @@
-/* @react-alpha/base.avatar version 0.2.8
+/* @react-alpha/base.avatar version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -11,7 +11,7 @@ import styled, { injectGlobal } from "styled-components";
 
 import React from "react";
 
-/* @react-alpha/base.flex version 0.2.8
+/* @react-alpha/base.flex version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -23,6 +23,7 @@ import React from "react";
   background: ${l => l.bg || null};
   background-color: ${l => l.bgc || null};
   background-image: ${l => l.bgi ? "url(" + l.bgi + ")" : null};
+  background-repeat: ${l => l.noRepeatBg ? "no-repeat" : null};
   background-size: ${l => l.bgi ? l.bgs || "100%" : l.bgs || null};
   border: ${l => l.b || null};
   border-bottom: ${l => l.bb || null};
@@ -100,14 +101,14 @@ Flex.propTypes = {
 
 var _extends = Object.assign || function(l) {
     for (var e = 1; e < arguments.length; e++) {
-        var r = arguments[e];
-        for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (l[n] = r[n]);
+        var n = arguments[e];
+        for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (l[r] = n[r]);
     }
     return l;
 }, objectWithoutProperties = function(l, e) {
-    var r = {};
-    for (var n in l) e.indexOf(n) >= 0 || Object.prototype.hasOwnProperty.call(l, n) && (r[n] = l[n]);
-    return r;
+    var n = {};
+    for (var r in l) e.indexOf(r) >= 0 || Object.prototype.hasOwnProperty.call(l, r) && (n[r] = l[r]);
+    return n;
 }, taggedTemplateLiteral = function(l, e) {
     return Object.freeze(Object.defineProperties(l, {
         raw: {
@@ -136,27 +137,28 @@ function pickColor(l) {
 injectGlobal(_templateObject);
 
 var Avatar = function(l) {
-    var e = l.src, r = l.status, n = l.size, t = l.statusBgColor, o = objectWithoutProperties(l, [ "src", "status", "size", "statusBgColor" ]);
+    var e = l.src, n = l.status, r = l.size, t = l.statusBgColor, o = objectWithoutProperties(l, [ "src", "status", "size", "statusBgColor" ]);
     return React.createElement(Flex, _extends({
         relative: !0,
         className: "ra-base-avatar",
-        w: n,
-        h: n
+        w: r,
+        h: r
     }, o), React.createElement(Flex, {
         full: !0,
+        noRepeatBg: !0,
         round: "50%",
         bgi: e
     }), React.createElement(Flex, {
         absolute: !0,
-        rt: .0214466094 * parseInt(n) + "px",
-        bm: .0214466094 * parseInt(n) + "px",
+        rt: .0214466094 * parseInt(r) + "px",
+        bm: .0214466094 * parseInt(r) + "px",
         bc: t || "#fff",
-        bw: .0425 * parseInt(n) + "px",
+        bw: .0425 * parseInt(r) + "px",
         bs: "solid",
         round: "50%",
-        w: .2928932188 * parseInt(n) + "px",
-        h: .2928932188 * parseInt(n) + "px",
-        bgc: pickColor(r)
+        w: .2928932188 * parseInt(r) + "px",
+        h: .2928932188 * parseInt(r) + "px",
+        bgc: pickColor(n)
     }));
 };
 

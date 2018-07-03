@@ -1,4 +1,4 @@
-/* @react-alpha/base.avatar version 0.2.8
+/* @react-alpha/base.avatar version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var PropTypes = require("prop-types"), PropTypes__default = _interopDefault(PropTypes), styled = require("styled-components"), styled__default = _interopDefault(styled), React = require("react"), React__default = _interopDefault(React);
 
-/* @react-alpha/base.flex version 0.2.8
+/* @react-alpha/base.flex version 0.2.10
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -30,6 +30,7 @@ const Flex = styled__default.div`
   background: ${e => e.bg || null};
   background-color: ${e => e.bgc || null};
   background-image: ${e => e.bgi ? "url(" + e.bgi + ")" : null};
+  background-repeat: ${e => e.noRepeatBg ? "no-repeat" : null};
   background-size: ${e => e.bgi ? e.bgs || "100%" : e.bgs || null};
   border: ${e => e.b || null};
   border-bottom: ${e => e.bb || null};
@@ -151,6 +152,7 @@ var Avatar = function(e) {
         h: r
     }, a), React__default.createElement(Flex, {
         full: !0,
+        noRepeatBg: !0,
         round: "50%",
         bgi: l
     }), React__default.createElement(Flex, {

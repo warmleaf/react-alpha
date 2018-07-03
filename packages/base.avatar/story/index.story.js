@@ -12,9 +12,10 @@ storiesOf('Base Component|Base', module)
         Avatar
       },
       code: `
-        <Avatar src="https://st2.depositphotos.com/1007566/12304/v/950/depositphotos_123041468-stock-illustration-avatar-man-cartoon.jpg"
-        status="dnd"
-        />
+<Avatar 
+  src="https://www.qq745.com/uploads/allimg/141009/1-14100ZT451-51.jpg"
+  status="dnd"
+/>
       `
     }
   )

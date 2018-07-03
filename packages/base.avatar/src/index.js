@@ -27,6 +27,7 @@ function pickColor(status) {
 const Avatar = ({ src, status, size, statusBgColor, ...rest }) => (
   <Flex
     relative
+    nonOverflow
     className="ra-base-avatar"
     w={size}
     h={size}
@@ -40,19 +41,20 @@ const Avatar = ({ src, status, size, statusBgColor, ...rest }) => (
     />
     <Flex
       absolute
-      rt={`${parseInt(size) * .0214466094}px`}
-      bm={`${parseInt(size) * .0214466094}px`}
+      rt={`${parseInt(size) * -.0732233047}px`}
+      bm={`${parseInt(size) * -.0732233047}px`}
       bc={statusBgColor || '#fff'}
-      bw={`${parseInt(size) * .0425}px`}
+      bw={`${parseInt(size) * .0732233047}px`}
       bs="solid"
       round="50%"
-      w={`${parseInt(size) * .2928932188}px`}
-      h={`${parseInt(size) * .2928932188}px`}
+      w={`${parseInt(size) * .4393398282}px`}
+      h={`${parseInt(size) * .4393398282}px`}
       bgc={pickColor(status)}
     />
   </Flex>
 )
-
+// 2928932188
+// 0214466094
 Avatar.propTypes = {
   /* align-self */
   size: string,
