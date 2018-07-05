@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.text",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "text",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",

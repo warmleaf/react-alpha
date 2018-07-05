@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.avatar-card",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "text",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
@@ -39,8 +39,8 @@
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "@react-alpha/base.avatar": "^0.2.13",
-    "@react-alpha/base.flex": "^0.2.13",
-    "@react-alpha/base.text": "^0.2.12"
+    "@react-alpha/base.avatar": "^0.2.14",
+    "@react-alpha/base.flex": "^0.2.14",
+    "@react-alpha/base.text": "^0.2.13"
   }
 }

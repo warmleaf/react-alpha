@@ -1,6 +1,6 @@
 {
-  "name": "@react-alpha/base.avatar",
-  "version": "0.2.14",
+  "name": "@react-alpha/case.list-group",
+  "version": "0.1.1",
   "description": "text",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
@@ -17,7 +17,8 @@
   "files": [
     "lib",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "src/style.css"
   ],
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -39,6 +40,8 @@
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "@react-alpha/base.flex": "^0.2.14"
+    "@react-alpha/base.flex": "^0.2.14",
+    "@react-alpha/base.text": "^0.2.13",
+    "kind-of": "^6.0.2"
   }
 }
