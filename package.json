@@ -1,6 +1,6 @@
 {
   "name": "react-alpha",
-  "version": "0.3.7",
+  "version": "0.3.10",
   "main": "index.js",
   "repository": "git@github.com:warmleaf/react-alpha.git",
   "author": "orlo wang <ow.cc@outlook.com>",
@@ -22,7 +22,7 @@
   "scripts": {
     "start": "start-storybook -p 6006",
     "prestart": "lerna bootstrap --hoist",
-    "prepare": "lerna bootstrap --hoist",
+    "bootstrap": "lerna bootstrap --hoist",
     "publish": "lerna publish",
     "prepublish": "node scripts/build-package.js",
     "addpkg": "node scripts/add-package.js",
