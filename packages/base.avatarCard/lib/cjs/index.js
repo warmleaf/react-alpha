@@ -1,4 +1,4 @@
-/* @react-alpha/base.avatar-card version 0.2.12
+/* @react-alpha/base.avatar-card version 0.2.14
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 

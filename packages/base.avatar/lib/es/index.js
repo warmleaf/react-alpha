@@ -1,124 +1,38 @@
-/* @react-alpha/base.avatar version 0.2.11
+/* @react-alpha/base.avatar version 0.2.14
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import PropTypes, { string } from "prop-types";
-
-import styled, { injectGlobal } from "styled-components";
-
 import React from "react";
 
-/* @react-alpha/base.flex version 0.2.10
- *
- * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
- * 
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ const Flex = styled.div`
-  align-items: ${l => l.column ? l.vc ? !0 === l.vc ? "center" : l.vc : null : l.hc ? !0 === l.hc ? "center" : l.hc : null};
-  align-self: ${l => l.as || null};
-  background: ${l => l.bg || null};
-  background-color: ${l => l.bgc || null};
-  background-image: ${l => l.bgi ? "url(" + l.bgi + ")" : null};
-  background-repeat: ${l => l.noRepeatBg ? "no-repeat" : null};
-  background-size: ${l => l.bgi ? l.bgs || "100%" : l.bgs || null};
-  border: ${l => l.b || null};
-  border-bottom: ${l => l.bb || null};
-  border-color: ${l => l.bc || null};
-  border-left: ${l => l.bl || null};
-  border-radius: ${l => l.round || null};
-  border-right: ${l => l.br || null};
-  border-style: ${l => l.bs || null};
-  border-top: ${l => l.bt || null};
-  border-width: ${l => l.bw || null};
-  bottom: ${l => l.bm || null};
-  box-shadow: ${l => l.shadow || null};
-  box-sizing: border-box;
-  color: ${l => l.c || null};
-  cursor: ${l => l.cur || null};
-  display: ${l => l.hidden ? "none" : l.inline ? "inline-flex" : "flex"};
-  height: ${l => l.h || null};
-  justify-content: ${l => l.column ? l.hc ? !0 === l.hc ? "center" : l.hc : null : l.vc ? !0 === l.vc ? "center" : l.vc : null};
-  left: ${l => l.lt || null};
-  margin: ${l => l.m || null};
-  margin-bottom: ${l => l.mb || null};
-  margin-left: ${l => l.ml || null};
-  margin-right: ${l => l.mr || null};
-  margin-top: ${l => l.mt || null};
-  max-height: ${l => l.mah || null};
-  max-width: ${l => l.maw || null};
-  min-height: ${l => l.mih || null};
-  min-width: ${l => l.miw || null};
-  flex: ${l => l.full ? 1 : null};
-  flex-direction: ${l => l.column ? "column" : null};
-  flex-wrap: ${l => l.wrap ? "wrap" : null};
-  font-size: ${l => l.size || null};
-  padding: ${l => l.p || null};
-  padding-bottom: ${l => l.pb || null};
-  padding-left: ${l => l.pl || null};
-  padding-right: ${l => l.pr || null};
-  padding-top: ${l => l.pt || null};
-  position: ${l => l.absolute ? "absolute" : l.relative ? "relative" : null};
-  opacity: ${l => l.o || null};
-  overflow: ${l => l.nonOverflow ? "hidden" : l.scroll ? "scroll" : "auto"};
-  right: ${l => l.rt || null};
-  top: ${l => l.tp || null};
-  text-align: ${l => l.tps || null};
-  transform: ${l => l.t || null};
-  transition: ${l => l.ani || null};
-  width: ${l => l.w || null};
-  z-index: ${l => l.z || null};
-  -webkit-overflow-scrolling: ${l => l.rebound || null};
-`;
+import { string } from "prop-types";
 
-Flex.propTypes = {
-    /* align-self */
-    as: PropTypes.string,
-    b: PropTypes.string,
-    /* border-bottom */
-    bb: PropTypes.string,
-    /* border-left */
-    bl: PropTypes.string,
-    /* border-radius */
-    br: PropTypes.string,
-    /* background */
-    bg: PropTypes.string,
-    /* background-color */
-    bgc: PropTypes.string,
-    /* border-top */
-    bt: PropTypes.string,
-    /* inline flex */
-    inline: PropTypes.string,
-    /* vertical center(default) */
-    vc: PropTypes.string,
-    /* horizontal center(default) */
-    hc: PropTypes.string,
-    round: PropTypes.string
-};
+import { injectGlobal } from "styled-components";
 
-var _extends = Object.assign || function(l) {
-    for (var e = 1; e < arguments.length; e++) {
-        var n = arguments[e];
-        for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (l[r] = n[r]);
+import Flex from "@react-alpha/base.flex";
+
+var _extends = Object.assign || function(e) {
+    for (var t = 1; t < arguments.length; t++) {
+        var r = arguments[t];
+        for (var a in r) Object.prototype.hasOwnProperty.call(r, a) && (e[a] = r[a]);
     }
-    return l;
-}, objectWithoutProperties = function(l, e) {
-    var n = {};
-    for (var r in l) e.indexOf(r) >= 0 || Object.prototype.hasOwnProperty.call(l, r) && (n[r] = l[r]);
-    return n;
-}, taggedTemplateLiteral = function(l, e) {
-    return Object.freeze(Object.defineProperties(l, {
+    return e;
+}, objectWithoutProperties = function(e, t) {
+    var r = {};
+    for (var a in e) t.indexOf(a) >= 0 || Object.prototype.hasOwnProperty.call(e, a) && (r[a] = e[a]);
+    return r;
+}, taggedTemplateLiteral = function(e, t) {
+    return Object.freeze(Object.defineProperties(e, {
         raw: {
-            value: Object.freeze(e)
+            value: Object.freeze(t)
         }
     }));
 }, _templateObject = taggedTemplateLiteral([ "\n  .ra-base-flex > img {\n    width: 100%;\n    height: 100%;\n  }\n" ], [ "\n  .ra-base-flex > img {\n    width: 100%;\n    height: 100%;\n  }\n" ]);
 
-function pickColor(l) {
-    switch (l) {
+function pickColor(e) {
+    switch (e) {
       case "dnd":
         return "#f04747";
 
@@ -136,30 +50,30 @@ function pickColor(l) {
 
 injectGlobal(_templateObject);
 
-var Avatar = function(l) {
-    var e = l.src, n = l.status, r = l.size, t = l.statusBgColor, o = objectWithoutProperties(l, [ "src", "status", "size", "statusBgColor" ]);
+var Avatar = function(e) {
+    var t = e.src, r = e.status, a = e.size, n = e.statusBgColor, o = objectWithoutProperties(e, [ "src", "status", "size", "statusBgColor" ]);
     return React.createElement(Flex, _extends({
         relative: !0,
         nonOverflow: !0,
         className: "ra-base-avatar",
-        w: r,
-        h: r
+        w: a,
+        h: a
     }, o), React.createElement(Flex, {
         full: !0,
         noRepeatBg: !0,
         round: "50%",
-        bgi: e
+        bgi: t
     }), React.createElement(Flex, {
         absolute: !0,
-        rt: -.0732233047 * parseInt(r) + "px",
-        bm: -.0732233047 * parseInt(r) + "px",
-        bc: t || "#fff",
-        bw: .0732233047 * parseInt(r) + "px",
+        rt: -.0732233047 * parseInt(a) + "px",
+        bm: -.0732233047 * parseInt(a) + "px",
+        bc: n || "#fff",
+        bw: .0732233047 * parseInt(a) + "px",
         bs: "solid",
         round: "50%",
-        w: .4393398282 * parseInt(r) + "px",
-        h: .4393398282 * parseInt(r) + "px",
-        bgc: pickColor(n)
+        w: .4393398282 * parseInt(a) + "px",
+        h: .4393398282 * parseInt(a) + "px",
+        bgc: pickColor(r)
     }));
 };
 
