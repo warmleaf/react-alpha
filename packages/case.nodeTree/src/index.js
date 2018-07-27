@@ -661,7 +661,7 @@ export default class NodeTree extends Component {
       search,
       ...rest
     } = this.props
-    const treeData = dfs(this.state.match, search)
+    const treeData = dfs(this.state.match, dataFormater.title || 'title')
     return <div style={{ width, height }}>
       <SortableTree
         theme={{
