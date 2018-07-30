@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.avatar",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "description": "text",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
@@ -39,7 +39,7 @@
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "@react-alpha/base.flex": "^0.2.18",
+    "@react-alpha/base.flex": "^0.2.19",
     "react-contextmenu-wl": "^3.0.0",
     "react-sortable-tree": "^2.2.0"
   }
