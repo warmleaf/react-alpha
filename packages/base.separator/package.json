@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.separator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "separator",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",

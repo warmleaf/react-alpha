@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.button",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "button",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
@@ -39,8 +39,8 @@
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "@react-alpha/base.flex": "^0.2.24",
-    "@react-alpha/base.text": "^0.2.23",
+    "@react-alpha/base.flex": "^0.2.25",
+    "@react-alpha/base.text": "^0.2.24",
     "polished": "^1.9.3",
     "prop-types": "^15.6.2"
   }
