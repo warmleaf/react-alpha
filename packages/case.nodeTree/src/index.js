@@ -10,6 +10,7 @@ import Flex from '@react-alpha/base.flex'
 import nodeContentRenderer from './node-content-rerender'
 import treeNodeRenderer from './tree-node-rerender'
 import { injectGlobal } from 'styled-components'
+import { ContextMenu, MenuItem } from 'react-contextmenu-wl'
 
 injectGlobal`
   .rst__virtualScrollOverride {
@@ -595,7 +596,6 @@ injectGlobal`
 `
 
 const dfs = (source, key, search) => {
-  console.log(search)
   if (search) {
     return source.filter(s => {
       if (s.children) s.children = dfs(s.children, key, search)
@@ -609,6 +609,9 @@ const dfs = (source, key, search) => {
   return source
 }
 
+export const Menu = ContextMenu
+export const Item = MenuItem
+
 export default class NodeTree extends Component {
   constructor(props) {
     super(props)
@@ -618,15 +621,17 @@ export default class NodeTree extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    if (props.search !== state.search) {
-      console.log(props)
+    if ((props.search !== state.search) || (props.data !== state.data)) {
       const match = dfs(props.data, props.dataFormater.title || 'title', props.search)
       return {
         ...props,
         match
       }
     }
-    return null
+    return {
+      ...props,
+      ...state
+    }
   }
 
   _onChange = (val) => {
@@ -657,6 +662,7 @@ export default class NodeTree extends Component {
       iconFormater,
       dataFormater,
       onClick,
+      onNodeClick,
       width,
       search,
       ...rest
@@ -677,7 +683,7 @@ export default class NodeTree extends Component {
         generateNodeProps={rowInfo => ({
           content,
           dataFormater,
-          onClick: onClick && onClick(rowInfo),
+          onNodeClick,
           ...(iconFormater ? { icons: [iconFormater(rowInfo.node)] } : {})
         })}
         {...rest}
@@ -693,7 +699,7 @@ NodeTree.propTypes = {
   data: arrayOf(object),
   height: string,
   iconFormater: func,
-  onClick: func,
+  onNodeClick: func,
   dataFormater: func,
   placeholder: oneOfType([func, object]),
   rowHeight: oneOfType([number, func]),

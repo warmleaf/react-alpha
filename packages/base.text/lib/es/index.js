@@ -1,4 +1,4 @@
-/* @react-alpha/base.text version 0.2.13
+/* @react-alpha/base.text version 0.2.23
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 

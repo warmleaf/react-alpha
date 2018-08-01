@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { ContextMenu, MenuItem } from 'react-contextmenu-wl'
-import NodeTree from '../src/index'
+import NodeTree, { Menu, Item } from '../src/index'
 
 storiesOf('Case Component|NodeTree', module)
   .addAPIDoc(
@@ -11,8 +10,8 @@ storiesOf('Case Component|NodeTree', module)
       platform: 'pc',
       scope: {
         NodeTree,
-        ContextMenu,
-        MenuItem
+        Menu,
+        Item
       },
       code: `
 class Example extends React.Component {
@@ -36,6 +35,7 @@ class Example extends React.Component {
             disableItems
           }
         }}
+        onNodeClick={(d) => console.log(d, '...')}
         dataFormater={{
           title: 'key'
         }}
@@ -61,14 +61,14 @@ class Example extends React.Component {
           }
         ]}
       />
-      <ContextMenu id="table">
+      <Menu id="table">
         {(state) => {
           console.log(state)
           return [
-            <MenuItem key="1">item 01</MenuItem>
+            <Item key="1">item 01</Item>
           ]
         }}
-      </ContextMenu>
+      </Menu>
     </div>
   }
 }

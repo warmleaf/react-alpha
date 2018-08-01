@@ -1,4 +1,4 @@
-/* @react-alpha/base.flex version 0.2.14
+/* @react-alpha/base.flex version 0.2.24
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 

@@ -320,7 +320,6 @@ function doFormat(formater, node) {
       delete (node[formater[key]])
     }
   })
-  console.log(node)
   return node
 }
 
@@ -338,6 +337,7 @@ class FileThemeNodeContentRenderer extends Component {
       canDrop,
       canDrag,
       node,
+      onNodeClick,
       title,
       draggedNode,
       path,
@@ -428,7 +428,6 @@ class FileThemeNodeContentRenderer extends Component {
                 })}
             />
           )}
-
         <div
           className={`rowWrapper${(!canDrag ? ' rowWrapperDragDisabled' : '')}`}
         >
@@ -449,6 +448,7 @@ class FileThemeNodeContentRenderer extends Component {
                   opacity: isDraggedDescendant ? 0.5 : 1,
                   ...style,
                 }}
+                onClick={() => onNodeClick && onNodeClick(formatedNode)}
               >
                 <div
                   className={
