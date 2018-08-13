@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.flex",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "flex layout",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",

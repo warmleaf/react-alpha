@@ -1,6 +1,6 @@
 {
   "name": "@react-alpha/base.avatar-card",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "text",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
@@ -39,9 +39,9 @@
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "@react-alpha/base.avatar": "^0.3.0",
-    "@react-alpha/base.flex": "^0.3.0",
-    "@react-alpha/base.text": "^0.3.0",
+    "@react-alpha/base.avatar": "^0.3.1",
+    "@react-alpha/base.flex": "^0.3.1",
+    "@react-alpha/base.text": "^0.3.1",
     "react-contextmenu-wl": "^3.0.0",
     "react-sortable-tree": "^2.2.0"
   }
