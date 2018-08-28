@@ -14,11 +14,11 @@ storiesOf('Base Component|Base', module)
         style,
       },
       code: `
-        <AvatarCard avatarSrc="https://st2.depositphotos.com/1007566/12304/v/950/depositphotos_123041468-stock-illustration-avatar-man-cartoon.jpg"
-              avatarStatus="dnd"
-              name="Orlo Wang"
-              subName="Playing Games"
-            />
+<AvatarCard avatarSrc="https://st2.depositphotos.com/1007566/12304/v/950/depositphotos_123041468-stock-illustration-avatar-man-cartoon.jpg"
+  avatarStatus="dnd"
+  title="Orlo Wang"
+  subtitle="Playing Games"
+/>
       `
     }
   )

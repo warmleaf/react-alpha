@@ -39,6 +39,7 @@ const Text = styled.span`
   padding-right: ${props => props.pr || null};
   padding-top: ${props => props.pt || null};
   opacity: ${props => props.o || null};
+  text-align: ${props => props.ta || null};
   transform: ${props => props.t || null};
   transition: ${props => props.ani || null};
   width: ${props => props.w || null};

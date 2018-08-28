@@ -1,4 +1,4 @@
-/* @react-alpha/base.flex version 0.2.24
+/* @react-alpha/base.flex version 0.3.0
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -7,72 +7,127 @@
  */
 "use strict";
 
-function _interopDefault(l) {
-    return l && "object" == typeof l && "default" in l ? l.default : l;
+function _interopDefault(n) {
+    return n && "object" == typeof n && "default" in n ? n.default : n;
 }
 
 Object.defineProperty(exports, "__esModule", {
     value: !0
 });
 
-var PropTypes = _interopDefault(require("prop-types")), styled = _interopDefault(require("styled-components"));
-
-const Flex = styled.div`
-  align-items: ${l => l.column ? l.vc ? !0 === l.vc ? "center" : l.vc : null : l.hc ? !0 === l.hc ? "center" : l.hc : null};
-  align-self: ${l => l.as || null};
-  background: ${l => l.bg || null};
-  background-color: ${l => l.bgc || null};
-  background-image: ${l => l.bgi ? "url(" + l.bgi + ")" : null};
-  background-repeat: ${l => l.noRepeatBg ? "no-repeat" : null};
-  background-size: ${l => l.bgi ? l.bgs || "100%" : l.bgs || null};
-  border: ${l => l.b || null};
-  border-bottom: ${l => l.bb || null};
-  border-color: ${l => l.bc || null};
-  border-left: ${l => l.bl || null};
-  border-radius: ${l => l.round || null};
-  border-right: ${l => l.br || null};
-  border-style: ${l => l.bs || null};
-  border-top: ${l => l.bt || null};
-  border-width: ${l => l.bw || null};
-  bottom: ${l => l.bm || null};
-  box-shadow: ${l => l.shadow || null};
-  box-sizing: border-box;
-  color: ${l => l.c || null};
-  cursor: ${l => l.cur || null};
-  display: ${l => l.hidden ? "none" : l.inline ? "inline-flex" : "flex"};
-  height: ${l => l.h || null};
-  justify-content: ${l => l.column ? l.hc ? !0 === l.hc ? "center" : l.hc : null : l.vc ? !0 === l.vc ? "center" : l.vc : null};
-  left: ${l => l.lt || null};
-  margin: ${l => l.m || null};
-  margin-bottom: ${l => l.mb || null};
-  margin-left: ${l => l.ml || null};
-  margin-right: ${l => l.mr || null};
-  margin-top: ${l => l.mt || null};
-  max-height: ${l => l.mah || null};
-  max-width: ${l => l.maw || null};
-  min-height: ${l => l.mih || null};
-  min-width: ${l => l.miw || null};
-  flex: ${l => l.full ? 1 : null};
-  flex-direction: ${l => l.column ? "column" : null};
-  flex-wrap: ${l => l.wrap ? "wrap" : null};
-  font-size: ${l => l.size || null};
-  padding: ${l => l.p || null};
-  padding-bottom: ${l => l.pb || null};
-  padding-left: ${l => l.pl || null};
-  padding-right: ${l => l.pr || null};
-  padding-top: ${l => l.pt || null};
-  position: ${l => l.absolute ? "absolute" : l.relative ? "relative" : null};
-  opacity: ${l => l.o || null};
-  overflow: ${l => l.nonOverflow ? "hidden" : l.scroll ? "scroll" : "auto"};
-  right: ${l => l.rt || null};
-  top: ${l => l.tp || null};
-  text-align: ${l => l.tps || null};
-  transform: ${l => l.t || null};
-  transition: ${l => l.ani || null};
-  width: ${l => l.w || null};
-  z-index: ${l => l.z || null};
-  -webkit-overflow-scrolling: ${l => l.rebound || null};
-`;
+var PropTypes = _interopDefault(require("prop-types")), styled = _interopDefault(require("styled-components")), taggedTemplateLiteral = function(n, r) {
+    return Object.freeze(Object.defineProperties(n, {
+        raw: {
+            value: Object.freeze(r)
+        }
+    }));
+}, _templateObject = taggedTemplateLiteral([ "\n  align-items: ", ";\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  background-image: ", ";\n  background-repeat: ", ";\n  background-size: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-color: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-style: ", ";\n  border-top: ", ";\n  border-width: ", ";\n  bottom: ", ";\n  box-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  display: ", ";\n  height: ", ";\n  justify-content: ", ";\n  left: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  max-height: ", ";\n  max-width: ", ";\n  min-height: ", ";\n  min-width: ", ";\n  flex: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  position: ", ";\n  opacity: ", ";\n  overflow: ", ";\n  right: ", ";\n  top: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  z-index: ", ";\n  -webkit-overflow-scrolling: ", ";\n" ], [ "\n  align-items: ", ";\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  background-image: ", ";\n  background-repeat: ", ";\n  background-size: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-color: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-style: ", ";\n  border-top: ", ";\n  border-width: ", ";\n  bottom: ", ";\n  box-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  display: ", ";\n  height: ", ";\n  justify-content: ", ";\n  left: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  max-height: ", ";\n  max-width: ", ";\n  min-height: ", ";\n  min-width: ", ";\n  flex: ", ";\n  flex-direction: ", ";\n  flex-wrap: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  position: ", ";\n  opacity: ", ";\n  overflow: ", ";\n  right: ", ";\n  top: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  z-index: ", ";\n  -webkit-overflow-scrolling: ", ";\n" ]), Flex = styled.div(_templateObject, function(n) {
+    return n.column ? n.vc ? !0 === n.vc ? "center" : n.vc : null : n.hc ? !0 === n.hc ? "center" : n.hc : null;
+}, function(n) {
+    return n.as || null;
+}, function(n) {
+    return n.bg || null;
+}, function(n) {
+    return n.bgc || null;
+}, function(n) {
+    return n.bgi ? "url(" + n.bgi + ")" : null;
+}, function(n) {
+    return n.noRepeatBg ? "no-repeat" : null;
+}, function(n) {
+    return n.bgi ? n.bgs || "100%" : n.bgs || null;
+}, function(n) {
+    return n.b || null;
+}, function(n) {
+    return n.bb || null;
+}, function(n) {
+    return n.bc || null;
+}, function(n) {
+    return n.bl || null;
+}, function(n) {
+    return n.round || null;
+}, function(n) {
+    return n.br || null;
+}, function(n) {
+    return n.bs || null;
+}, function(n) {
+    return n.bt || null;
+}, function(n) {
+    return n.bw || null;
+}, function(n) {
+    return n.bm || null;
+}, function(n) {
+    return n.shadow || null;
+}, function(n) {
+    return n.c || null;
+}, function(n) {
+    return n.cur || null;
+}, function(n) {
+    return n.hidden ? "none" : n.inline ? "inline-flex" : "flex";
+}, function(n) {
+    return n.h || null;
+}, function(n) {
+    return n.column ? n.hc ? !0 === n.hc ? "center" : n.hc : null : n.vc ? !0 === n.vc ? "center" : n.vc : null;
+}, function(n) {
+    return n.lt || null;
+}, function(n) {
+    return n.m || null;
+}, function(n) {
+    return n.mb || null;
+}, function(n) {
+    return n.ml || null;
+}, function(n) {
+    return n.mr || null;
+}, function(n) {
+    return n.mt || null;
+}, function(n) {
+    return n.mah || null;
+}, function(n) {
+    return n.maw || null;
+}, function(n) {
+    return n.mih || null;
+}, function(n) {
+    return n.miw || null;
+}, function(n) {
+    return n.full ? 1 : null;
+}, function(n) {
+    return n.column ? "column" : null;
+}, function(n) {
+    return n.wrap ? "wrap" : null;
+}, function(n) {
+    return n.size || null;
+}, function(n) {
+    return n.p || null;
+}, function(n) {
+    return n.pb || null;
+}, function(n) {
+    return n.pl || null;
+}, function(n) {
+    return n.pr || null;
+}, function(n) {
+    return n.pt || null;
+}, function(n) {
+    return n.absolute ? "absolute" : n.relative ? "relative" : null;
+}, function(n) {
+    return n.o || null;
+}, function(n) {
+    return n.nonOverflow ? "hidden" : n.scroll ? "scroll" : "auto";
+}, function(n) {
+    return n.rt || null;
+}, function(n) {
+    return n.tp || null;
+}, function(n) {
+    return n.tps || null;
+}, function(n) {
+    return n.t || null;
+}, function(n) {
+    return n.ani || null;
+}, function(n) {
+    return n.w || null;
+}, function(n) {
+    return n.z || null;
+}, function(n) {
+    return n.rebound || null;
+});
 
 Flex.propTypes = {
     /* align-self */

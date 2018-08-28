@@ -1,12 +1,12 @@
 {
-  "name": "@react-alpha/base.icon",
-  "version": "0.1.1",
-  "description": "icon",
+  "name": "@react-alpha/base.pop",
+  "version": "0.0.1",
+  "description": "pop",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp"
+    "build": "rollup -c"
   },
   "repository": "git@github.com:warmleaf/react-alpha.git",
   "author": "orlo wang <ow.cc@outlook.com>",
@@ -36,14 +36,14 @@
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-size-snapshot": "^0.5.1",
     "rollup-plugin-terser": "^1.0.1",
-    "gulp": "next",
     "styled-components": "^3.3.3"
   },
   "dependencies": {
-    "react-icon-base": "^2.1.2"
+    "styled-components": "^3.3.3"
   },
   "peerDependencies": {
     "prop-types": "^15.6.2",
+    "react-dom": "^16.4.1",
     "react": "^16.4.1"
   }
 }

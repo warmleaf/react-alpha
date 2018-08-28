@@ -1,8 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import ListGroup from '../src/index'
+import ListGroup from '../src/list-group'
 import Text from '../../base.text'
-import style from '../src/style.css'
 
 storiesOf('Case Component|List Group', module)
   .addAPIDoc(
@@ -12,8 +11,7 @@ storiesOf('Case Component|List Group', module)
       platform: 'pc|mobile',
       scope: {
         ListGroup,
-        Text,
-        style
+        Text
       },
       code: `
 <ListGroup 

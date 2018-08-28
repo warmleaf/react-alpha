@@ -1,4 +1,4 @@
-/* @react-alpha/base.avatar version 0.2.24
+/* @react-alpha/base.avatar version 0.3.0
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 

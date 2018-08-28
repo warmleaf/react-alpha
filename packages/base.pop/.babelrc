@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "stage-0",
+    "react",
+    [
+      "env",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-class-properties",
+    "external-helpers"
+  ]
+}

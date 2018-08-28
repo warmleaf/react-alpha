@@ -1,4 +1,4 @@
-/* @react-alpha/base.text version 0.2.23
+/* @react-alpha/base.text version 0.3.0
  *
  * Copyright (c) 2013-present, orlo wang <ow.cc@outlook.com>
  * 
@@ -9,8 +9,16 @@ import { string } from "prop-types";
 
 import styled from "styled-components";
 
-function pickBreakType(l) {
-    switch (l) {
+var taggedTemplateLiteral = function(n, r) {
+    return Object.freeze(Object.defineProperties(n, {
+        raw: {
+            value: Object.freeze(r)
+        }
+    }));
+}, _templateObject = taggedTemplateLiteral([ "\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-top: ", ";\n  text-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  opacity: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  word-break: ", ";\n" ], [ "\n  align-self: ", ";\n  background: ", ";\n  background-color: ", ";\n  border: ", ";\n  border-bottom: ", ";\n  border-left: ", ";\n  border-radius: ", ";\n  border-right: ", ";\n  border-top: ", ";\n  text-shadow: ", ";\n  box-sizing: border-box;\n  color: ", ";\n  cursor: ", ";\n  margin: ", ";\n  margin-bottom: ", ";\n  margin-left: ", ";\n  margin-right: ", ";\n  margin-top: ", ";\n  font-size: ", ";\n  padding: ", ";\n  padding-bottom: ", ";\n  padding-left: ", ";\n  padding-right: ", ";\n  padding-top: ", ";\n  opacity: ", ";\n  text-align: ", ";\n  transform: ", ";\n  transition: ", ";\n  width: ", ";\n  word-break: ", ";\n" ]);
+
+function pickBreakType(n) {
+    switch (n) {
       case "breakAll":
         return "break-all";
 
@@ -23,37 +31,65 @@ function pickBreakType(l) {
     }
 }
 
-const Text = styled.span`
-  align-self: ${l => l.as || null};
-  background: ${l => l.bg || null};
-  background-color: ${l => l.bgc || null};
-  border: ${l => l.b || null};
-  border-bottom: ${l => l.bb || null};
-  border-left: ${l => l.bl || null};
-  border-radius: ${l => l.round || null};
-  border-right: ${l => l.br || null};
-  border-top: ${l => l.bt || null};
-  text-shadow: ${l => l.shadow || null};
-  box-sizing: border-box;
-  color: ${l => l.c || null};
-  cursor: ${l => l.cur || null};
-  margin: ${l => l.m || null};
-  margin-bottom: ${l => l.mb || null};
-  margin-left: ${l => l.ml || null};
-  margin-right: ${l => l.mr || null};
-  margin-top: ${l => l.mt || null};
-  font-size: ${l => l.size || null};
-  padding: ${l => l.p || null};
-  padding-bottom: ${l => l.pb || null};
-  padding-left: ${l => l.pl || null};
-  padding-right: ${l => l.pr || null};
-  padding-top: ${l => l.pt || null};
-  opacity: ${l => l.o || null};
-  transform: ${l => l.t || null};
-  transition: ${l => l.ani || null};
-  width: ${l => l.w || null};
-  word-break: ${l => l.break ? pickBreakType(l.break) : null};
-`;
+var Text = styled.span(_templateObject, function(n) {
+    return n.as || null;
+}, function(n) {
+    return n.bg || null;
+}, function(n) {
+    return n.bgc || null;
+}, function(n) {
+    return n.b || null;
+}, function(n) {
+    return n.bb || null;
+}, function(n) {
+    return n.bl || null;
+}, function(n) {
+    return n.round || null;
+}, function(n) {
+    return n.br || null;
+}, function(n) {
+    return n.bt || null;
+}, function(n) {
+    return n.shadow || null;
+}, function(n) {
+    return n.c || null;
+}, function(n) {
+    return n.cur || null;
+}, function(n) {
+    return n.m || null;
+}, function(n) {
+    return n.mb || null;
+}, function(n) {
+    return n.ml || null;
+}, function(n) {
+    return n.mr || null;
+}, function(n) {
+    return n.mt || null;
+}, function(n) {
+    return n.size || null;
+}, function(n) {
+    return n.p || null;
+}, function(n) {
+    return n.pb || null;
+}, function(n) {
+    return n.pl || null;
+}, function(n) {
+    return n.pr || null;
+}, function(n) {
+    return n.pt || null;
+}, function(n) {
+    return n.o || null;
+}, function(n) {
+    return n.ta || null;
+}, function(n) {
+    return n.t || null;
+}, function(n) {
+    return n.ani || null;
+}, function(n) {
+    return n.w || null;
+}, function(n) {
+    return n.break ? pickBreakType(n.break) : null;
+});
 
 Text.propTypes = {
     /* align-self */

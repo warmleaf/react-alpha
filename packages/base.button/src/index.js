@@ -15,7 +15,6 @@ export default class Button extends PureComponent {
       textWithLine,
       theme,
       prompt,
-      // onClick,
       href,
       route,
       primary,

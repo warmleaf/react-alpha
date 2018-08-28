@@ -26,11 +26,11 @@
   "homepage": "https://github.com/warmleaf/react-alpha#readme",
   "peerDependencies": {
     "react": "^16.4.1",
+    "prop-types": "^15.6.2",
     "styled-components": "^3.3.3"
   },
   "dependencies": {
     "@react-alpha/base.flex": "^0.3.1",
-    "prop-types": "^15.6.2",
     "react-contextmenu-wl": "^3.0.0",
     "react-sortable-tree": "^2.2.0"
   },
