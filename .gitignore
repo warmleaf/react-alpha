@@ -67,5 +67,5 @@ storybook-static
 *.no-need-ts-for-now
 
 # build files
-packages/**/lib
+**lib
 .size-snapshot.json
